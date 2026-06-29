@@ -1,0 +1,84 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/user_login.css' %}">
+
+{% block body %}
+
+{% include 'recruiter_navigation.html' %}
+
+<h1 class="text-center" style="color:#071739; font-weight:bold; margin-top:30px; margin-bottom:25px;">
+    <i class="fa fa-users" style="color:#2563EB;"></i> Applied Candidates List
+</h1>
+
+<div class="container">
+
+<table class="table table-hover table-bordered" id="example"
+       style="background:white;
+              border-radius:15px;
+              overflow:hidden;
+              box-shadow:0 6px 20px rgba(0,0,0,0.1);">
+
+    <thead>
+
+    <tr style="background:#2563EB; color:white; font-size:16px;">
+
+        <th>S.no</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Job title</th>
+        <th>Company</th>
+        <th>Applied date</th>
+        <th>Resume</th>
+
+    </tr>
+
+    </thead>
+
+    <tbody>
+
+    {% for i in data %}
+{% if request.user.id == i.job.recruiter.user.id %}
+    <tr style="background:#F8FAFC;">
+
+        <td>{{forloop.counter}}</td>
+
+
+        <td>
+            <strong>
+                {{i.applicant.user.first_name}}  {{i.applicant.user.last_name}}
+            </strong>
+        </td>
+
+        <td>{{i.applicant.user.email}}</td>
+        <td>{{i.applicant.phone}}</td>
+        <td>{{i.job.title}}</td>
+        <td>{{i.job.recruiter.company}}</td>
+         <td>{{i.applied_date}}</td>
+        <td><a href="{{i.resume.url}}">Download Resume</a></td>
+
+<td>
+
+    <a href="{% url 'delete_candidates' i.id %}"
+       class="btn btn-danger btn-sm"
+       style="border-radius:8px; padding:8px 16px;"
+       onclick="return confirm('Are you sure you want to delete this Application?')">
+        <i class="fa fa-trash"></i> Delete
+    </a>
+
+</td>
+
+    </tr>
+    {% endif %}
+    {% endfor %}
+
+    </tbody>
+
+</table>
+</div>
+{% include 'footer.html' %}
+
+
+
+
+{% endblock %}

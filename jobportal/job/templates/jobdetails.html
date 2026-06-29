@@ -1,0 +1,278 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/user_login.css' %}">
+
+{% block body %}
+
+{% include 'user_navigation.html' %}
+
+<div class="container py-5">
+
+ 
+    <div class="text-center mb-5">
+
+        <h1 style="font-size:48px;
+                   font-weight:700;
+                   color:#071739;">
+
+            <i class="fa fa-briefcase"
+               style="color:#2563EB;
+                      margin-right:10px;">
+            </i>
+
+            Job Details
+
+        </h1>
+
+        <p style="font-size:18px;
+                  color:#6B7280;
+                  margin-top:10px;">
+
+            Find the right opportunity for your career
+
+        </p>
+
+    </div>
+
+
+    <div class="card border-0 shadow rounded-4 overflow-hidden">
+
+        <div class="row g-0">
+
+
+            <div class="col-lg-4"
+                 style="background:#F8FAFC;
+                        padding:35px;">
+
+                <div class="text-center">
+
+                    <img src="{{job.image.url}}"
+                         style="width:250px;
+                                height:200px;
+                                object-fit:cover;
+                                border-radius:18px;
+                                border:4px solid white;
+                                box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+
+                </div>
+
+                <div class="mt-5">
+
+                    <h4 style="font-weight:700;
+                               color:#071739;
+                               margin-bottom:15px;">
+
+                        Overview
+
+                    </h4>
+
+                    <p style="font-size:17px;
+                              color:#4B5563;
+                              line-height:1.8;">
+
+                        {{job.description}}
+
+                    </p>
+
+                </div>
+
+
+                <div class="mt-4">
+
+                    <h5 style="font-weight:700;
+                               color:#071739;
+                               margin-bottom:10px;">
+
+                        Experience
+
+                    </h5>
+
+                    <p style="font-size:17px;
+                              color:#4B5563;">
+
+                        {{job.experience}} Years
+
+                    </p>
+
+                </div>
+
+                <div class="mt-4">
+
+                    <h5 style="font-weight:700;
+                               color:#071739;
+                               margin-bottom:10px;">
+                        Start Date
+                    </h5>
+
+                    <p style="font-size:17px;
+                              color:#4B5563;">
+
+                        {{job.start_date}}
+
+                    </p>
+
+                </div>
+
+
+                <div class="mt-4">
+
+                    <h5 style="font-weight:700;
+                               color:#071739;
+                               margin-bottom:10px;">
+                        Last Date
+                    </h5>
+
+                    <p style="font-size:17px;
+                              color:#DC2626;
+                              font-weight:600;">
+
+                        {{job.end_date}}
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-8 p-5">
+
+                <h1 style="font-size:42px;
+                           font-weight:700;
+                           color:#071739;
+                           margin-bottom:15px;">
+
+                    {{job.title}}
+
+                </h1>
+
+
+                <div style="margin-bottom:35px;">
+
+                    <span style="font-size:24px;
+                                 font-weight:600;
+                                 color:#374151;">
+
+                        {{job.recruiter.company}}
+
+                    </span>
+
+                    <a href="{% url 'userjobs' %}"
+                       style="margin-left:15px;
+                              text-decoration:none;
+                              color:#2563EB;
+                              font-size:16px;">
+
+                        View Other Jobs
+
+                    </a>
+
+                </div>
+
+
+                <div style="margin-bottom:35px;">
+
+                    <div style="margin-bottom:20px;
+                                font-size:19px;">
+
+                        <a href="https://maps.google.com/?q={{ job.location }}"
+                           target="_blank"
+                           style="text-decoration:none;
+                                  color:#111827;">
+
+                            <i class="fa fa-map-marker"
+                               style="color:#EF4444;
+                                      margin-right:12px;">
+                            </i>
+
+                            {{job.location}}
+
+                        </a>
+
+                    </div>
+
+
+                    <div style="margin-bottom:25px;
+                                font-size:19px;
+                                color:#111827;">
+
+                        <i class="fa fa-calendar"
+                           style="color:#2563EB;
+                                  margin-right:12px;">
+                        </i>
+
+                        {{job.creation_date}}
+
+                    </div>
+
+
+                    <div>
+
+                        <span style="background:#10B981;
+                                     color:white;
+                                     padding:10px 22px;
+                                     border-radius:25px;
+                                     font-size:16px;
+                                     font-weight:600;">
+
+                            <i class="fa fa-inr"
+                               style="margin-right:8px;">
+                            </i>
+
+                            {{job.salary}}
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div style="margin-bottom:45px;">
+
+                    <h4 style="font-weight:700;
+                               color:#071739;
+                               margin-bottom:15px;">
+
+                        Skills Required
+
+                    </h4>
+
+                    <p style="font-size:18px;
+                              color:#4B5563;
+                              line-height:1.9;">
+
+                        {{job.skills}}
+
+                    </p>
+
+                </div>
+
+
+                <div>
+
+                    <a href="{% url 'applyjob' job.id %}"
+                       class="btn btn-primary btn-lg px-5 py-3 rounded-pill me-3">
+
+                        <i class="fa fa-paper-plane me-2"></i>
+
+                        Apply Now
+
+                    </a>
+
+                    <a href="{% url 'userjobs' %}"
+                       class="btn btn-outline-primary btn-lg px-5 py-3 rounded-pill">Back
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% include 'footer.html' %}
+
+{% endblock %}

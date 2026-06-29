@@ -1,0 +1,88 @@
+body{
+    background:#f4f7fc;
+}
+
+/* Main Section */
+.profile-section{
+    padding:50px 0;
+}
+
+/* White Container */
+.profile-box{
+    background:white;
+    border-radius:20px;
+    padding:40px;
+    box-shadow:0 6px 25px rgba(0,0,0,0.08);
+}
+
+/* Heading */
+.profile-heading h2{
+    font-weight:700;
+    color:#1e293b;
+    margin-bottom:10px;
+}
+
+.profile-heading p{
+    color:#64748b;
+    margin-bottom:35px;
+}
+
+/* Labels */
+.form-group label{
+    font-weight:600;
+    margin-bottom:8px;
+    color:#334155;
+}
+
+/* Inputs */
+.form-control{
+    height:50px;
+    border-radius:12px;
+    border:1px solid #dbe1ea;
+    padding-left:15px;
+    box-shadow:none !important;
+    transition:0.3s;
+}
+
+.form-control:focus{
+    border-color:#2563eb;
+}
+
+/* Radio */
+.gender-box{
+    display:flex;
+    gap:30px;
+    margin-top:10px;
+}
+
+/* Image Preview */
+.profile-image{
+    text-align:center;
+}
+
+.profile-image img{
+    width:220px;
+    height:220px;
+    object-fit:cover;
+    border-radius:20px;
+    border:5px solid #e2e8f0;
+    box-shadow:0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Button */
+.signup-btn{
+    width:100%;
+    height:50px;
+    border:none;
+    border-radius:12px;
+    background:#2563eb;
+    color:white;
+    font-size:17px;
+    font-weight:600;
+    margin-top:20px;
+    transition:0.3s;
+}
+
+.signup-btn:hover{
+    background:#1d4ed8;
+}

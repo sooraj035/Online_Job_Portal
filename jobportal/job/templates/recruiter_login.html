@@ -1,0 +1,77 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/recruiter_login.css' %}">
+<link rel="stylesheet" href="{% static 'css/user_login.css' %}">
+{% block body %}
+
+{% include 'navigation.html' %}
+
+
+<div class="container login-container">
+
+    <div class="login-card">
+
+        <div class="login-icon">
+            <i class="fa fa-briefcase"></i>
+        </div>
+
+        <div class="login-heading">
+            <h2>Recruiter Login</h2>
+            <p>Login to manage jobs and applicants</p>
+        </div>
+
+        <form method="POST">
+
+            {% csrf_token %}
+
+            <label class="form-label">Email</label>
+
+            <input type="text" class="form-control" name="email" placeholder="Enter your Email">
+
+            <label class="form-label">Password</label>
+
+            <input type="password" class="form-control" name="password" placeholder="Enter your password">
+
+            <input type="submit" class="login-btn" value="Login">
+
+            <div class="signup-section">
+    <p>Don't have an account?</p>
+    <a href="{% url 'recruiter_signup' %}" class="signup-btn">
+        Create Account
+    </a>
+</div>
+
+        </form>
+
+
+{% if error == "no" %}
+<script>
+    alert("Recruiter Login Successful");
+    window.location.href = "{% url 'recruiter_home' %}";
+</script>
+{% endif %}
+
+
+{% if error == "yes" %}
+<script>
+    alert("Recruiter Login Failed");
+</script>
+{% endif %}
+
+
+{% if error == "not" %}
+<script>
+    alert("Recruiter Login Status Pending");
+</script>
+{% endif %}
+
+
+
+        <div class="bottom-text">
+            Secure recruiter access portal
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,118 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/user_login.css' %}">
+{% block body %}
+
+{% include 'navigation.html' %}
+
+
+
+<div class="container login-container">
+
+    <div class="login-card">
+
+        <div class="login-icon">
+            <i class="fa fa-user-circle"></i>
+        </div>
+
+        <div class="login-heading">
+            <h2>Recruiter Signup</h2>
+            <p>Create account to post  jobs and view applications</p>
+        </div>
+
+        <form method="POST" enctype="multipart/form-data">
+
+            {% csrf_token %}
+<div class="form-row">
+    <div class="form-group col-md-6">
+        <label>First name</label>
+        <input type="text" class="form-control" name="first_name" placeholder="Enter your first name">
+</div>
+      <div class="form-group col-md-6">
+        <label>Last name</label>
+        <input type="text" class="form-control" name="last_name" placeholder="Enter your Last name">
+</div>
+</div>
+
+            <div class="form-row">
+    <div class="form-group col-md-6">
+        <label>Contact number</label>
+        <input type="text" class="form-control" name="contact" placeholder="Enter your Contact number">
+</div>
+            </div>
+                 <div class="form-row">
+    <div class="form-group col-md-6">
+        <label>Company </label>
+        <input type="text" class="form-control" name="company" placeholder="Enter your Company name">
+</div>
+
+</div>
+
+            <div class="form-row">
+    <div class="form-group col-md-12">
+        <label>Email id </label>
+        <input type="text" class="form-control" name="email" placeholder="Enter your Email address">
+</div>
+
+</div>
+
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label>Password</label>
+                    <input type="password" class="form-control" name="password" placeholder="Enter your password">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label>Confirm Password</label>
+                    <input type="password" class="form-control" name="conpass" placeholder="Enter your Confirmed password">
+                </div>
+            </div>
+
+
+            <div class="form-row">
+    <div class="form-group col-md-12">
+        <label>Gender</label>
+        <div class="custom-control custom-radio custom-control-control-inline">
+            <input type="radio" id="customRadioInline1" name="gender"  class="custom-control-input" value="Male">
+            <label class="custom-control-label" for="customRadioInline1">Male</label>
+        </div>
+        <div class="custom-control custom-radio custom-control-control-inline">
+            <input type="radio" id="customRadioInline2" name="gender"  class="custom-control-input" value="Female">
+            <label class="custom-control-label" for="customRadioInline2">Female</label>
+        </div>
+</div>
+
+
+
+      <div class="form-group col-md-12">
+        <label>Image</label>
+        <input type="file" class="form-control" name="image">
+</div>
+</div>
+
+
+
+<input type="submit" class="signup-btn" value="Signup">
+        </form>
+    </div>
+</div>
+{% include 'footer.html' %}
+
+{% if error == "no" %}
+<script>
+    alert("Recruiter Signup Successful");
+    window.location.href=("{% url 'recruiter_login' %}");
+</script>
+{% endif %}
+
+{% if error == "yes" %}
+<script>
+    alert("Recruiter Signup Failed");
+</script>
+{% endif %}
+
+
+
+
+{% endblock %}

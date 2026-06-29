@@ -1,0 +1,70 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/user_login.css' %}">
+{% block body %}
+
+{% include 'navigation.html' %}
+
+
+
+<div class="container login-container">
+
+    <div class="login-card">
+
+        <div class="login-icon">
+            <i class="fa fa-user-circle"></i>
+        </div>
+
+        <div class="login-heading">
+            <h2>User Login</h2>
+            <p>Login to apply for jobs and track applications</p>
+        </div>
+
+        <form method="POST">
+
+            {% csrf_token %}
+
+            <label class="form-label">Email </label>
+
+            <input type="text" class="form-control" name="email" placeholder="Enter your Email">
+
+            <label class="form-label">Password</label>
+
+            <input type="password" class="form-control" name="password" placeholder="Enter your password">
+
+            <input type="submit" class="login-btn" value="Login">
+
+<div class="signup-section">
+    <p>Don't have an account?</p>
+    <a href="{% url 'user_signup' %}" class="signup-btn">
+        Create Account
+    </a>
+</div>
+
+        </form>
+
+        <div class="bottom-text">
+            Secure user access portal
+        </div>
+
+    </div>
+
+</div>
+
+{% include 'footer.html' %}
+
+{% if error == "no" %}
+<script>
+    alert("Login Successful");
+    window.location=("{% url 'user_home' %}");
+</script>
+{% endif %}
+
+{% if error == "yes" %}
+<script>
+    alert("Login Failed");
+</script>
+{% endif %}
+
+
+
+{% endblock %}

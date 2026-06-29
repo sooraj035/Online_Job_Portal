@@ -1,0 +1,49 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/admin_login.css' %}">
+{% block body %}
+
+{% include 'navigation.html' %}
+
+
+
+<div class="container login-container">
+
+    <div class="login-card">
+
+        <div class="login-icon"><i class="fa fa-user-circle"></i>
+        </div>
+
+        <div class="admin-heading">
+            <h2>Admin Login</h2>
+            <p>Access the dashboard securely</p>
+        </div>
+
+        <form method="POST">
+            {% csrf_token %}
+
+            <label class="form-label">Username</label>
+            <input type="text" class="form-control" name="username" placeholder="Enter your username">
+
+            <label class="form-label">Password</label>
+            <input type="password" class="form-control" name="password" placeholder="Enter your password">
+            <input type="submit" class="login-btn" value="Login">
+
+        </form>
+        {% if error == "no" %}
+<script>
+    alert("Login Successful");
+    window.location=("{% url 'admin_home' %}");
+</script>
+{% endif %}
+
+{% if error == "yes" %}
+<script>
+    alert("Login Failed");
+</script>
+{% endif %}
+
+    </div>
+
+</div>
+
+{% endblock %}

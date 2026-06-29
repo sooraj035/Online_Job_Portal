@@ -1,0 +1,94 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/user_login.css' %}">
+
+{% block body %}
+
+{% include 'user_navigation.html' %}
+
+<div class="container py-5">
+
+ 
+    <div class="text-center mb-5">
+
+        <h1 style="font-size:48px;
+                   font-weight:700;
+                   color:#071739;">
+
+            <i class="fa fa-briefcase"
+               style="color:#2563EB;
+                      margin-right:10px;">
+            </i>
+
+            Apply for JOB
+
+        </h1>
+
+        <p style="font-size:18px;
+                  color:#6B7280;
+                  margin-top:10px;">
+
+            Find the right opportunity for your career
+
+        </p>
+
+    </div>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-row">
+            <label class="fwt-bold">Upload Resume</label>
+            <input type="file"  class="form-control" name="resume">
+        </div>
+        <input type="submit" value="Submit" class="btn btn-primary btn-lg px-5 py-3 rounded-pill">
+
+    </form>
+
+
+
+
+            </div>
+
+{% include 'footer.html' %}
+
+
+{% if error == "Not opened for applying" %}
+<script>
+
+    alert("Applications have not opened yet. Please check back later.");
+
+    window.location.href = "{% url 'userjobs' %}";
+
+</script>
+
+{% endif %}
+
+
+{% if error == "Closed" %}
+
+<script>
+
+    alert("Application period has ended. We are no longer accepting applications.");
+
+    window.location.href = "{% url 'userjobs' %}";
+
+</script>
+
+{% endif %}
+
+
+{% if error == "Done" %}
+
+<script>
+
+    alert("Thank you! Your application has been submitted successfully.");
+
+    window.location.href = "{% url 'userjobs' %}";
+
+</script>
+
+{% endif %}
+
+
+
+
+{% endblock %}

@@ -1,0 +1,157 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/user_login.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+{% block body %}
+
+{% include 'navigation.html' %}
+{% if messages %}
+    {% for message in messages %}
+        <div class="container mt-3">
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+        </div>
+    {% endfor %}
+{% endif %}
+
+<div class="container my-5">
+
+    <div class="card shadow-lg border-0 rounded-4 p-4">
+
+        <h1 class="text-center text-primary mb-2">Contact Us</h1>
+
+        <p class="text-center text-muted mb-5">
+            Have questions about jobs, applications, or recruiters?
+            We're here to help you.
+        </p>
+
+        <div class="row">
+
+
+            <div class="col-md-5">
+
+                <h3 class="mb-4">Online Job Finder</h3>
+
+                <hr>
+
+                <p class="mb-4">
+                    Online Job Finder connects talented job seekers with trusted employers.
+                    Contact us for support, recruitment assistance, or career guidance.
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-location-dot text-primary me-2"></i>
+                    Kochi, Kerala, India
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-phone text-success me-2"></i>
+                    +91 9188690168
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-envelope text-danger me-2"></i>
+                    support@jobportal.com
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-clock text-warning me-2"></i>
+                    Mon - Sat : 9:00 AM - 6:00 PM
+                </p>
+
+
+
+            </div>
+
+
+            <div class="col-md-7">
+
+                <form method="post">
+                    {% csrf_token %}
+
+                    <div class="mb-3">
+                        <input type="text"
+                               class="form-control form-control-lg"
+                               placeholder="Your Name"  name="name"
+                               required>
+                    </div>
+
+                    <div class="mb-3">
+                        <input type="email"
+                               class="form-control form-control-lg"
+                               placeholder="Your Email" name="email"
+                               required>
+                    </div>
+
+                    <div class="mb-3">
+                        <input type="text"
+                               class="form-control form-control-lg"
+                               placeholder="Subject" name="subject"
+                               required>
+                    </div>
+
+                    <div class="mb-3">
+                        <textarea class="form-control"
+                                  rows="6"
+                                  placeholder="Write your message here..." name="message"
+                                  required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-lg w-100">
+                        <i class="fa-solid fa-paper-plane"></i>on
+                        Send Message
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+        <hr class="my-5">
+
+
+        <div class="row text-center">
+
+            <div class="col-md-4">
+                <h2 class="text-primary">500+</h2>
+                <p>Jobs Posted</p>
+            </div>
+
+            <div class="col-md-4">
+                <h2 class="text-success">1000+</h2>
+                <p>Applicants</p>
+            </div>
+
+            <div class="col-md-4">
+                <h2 class="text-danger">100+</h2>
+                <p>Recruiters</p>
+            </div>
+
+        </div>
+
+        <hr class="my-5">
+
+       
+        <div class="mb-4">
+            <iframe
+                src="https://maps.google.com/maps?q=Shoranuri&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                width="100%"
+                height="300"
+                style="border:0;border-radius:10px;"
+                allowfullscreen=""
+                loading="lazy">
+            </iframe>
+        </div>
+
+        <div class="text-center text-muted">
+            © 2026 Online Job Finder | Connecting Talent With Opportunities
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

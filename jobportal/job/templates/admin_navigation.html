@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <!-- Bootstrap -->
+<link rel="stylesheet"
+href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- Your CSS -->
+<link rel="stylesheet"
+href="{% static 'css/admin_navigation.css' %}">
+
+    <title>Online Job Finder</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <!-- Font Awesome -->
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<!-- DataTables CSS -->
+<link rel="stylesheet"
+href="https://cdn.datatables.net/2.3.8/css/dataTables.dataTables.css">
+
+<link rel="stylesheet"
+href="https://cdn.datatables.net/buttons/3.2.6/css/buttons.dataTables.css">
+
+
+<!-- DataTables JS -->
+<script src="https://cdn.datatables.net/2.3.8/js/dataTables.js"></script>
+
+<script src="https://cdn.datatables.net/buttons/3.2.6/js/dataTables.buttons.js"></script>
+
+<script src="https://cdn.datatables.net/buttons/3.2.6/js/buttons.html5.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
+
+
+</head>
+
+<body>
+
+
+
+<div class="container-fluid top-header">
+
+    <div class="container">
+
+        <div class="row">
+
+            <!-- Logo -->
+            <div class="col-sm-3 logo-section">
+                <img src="{% static 'images/job1.jpg' %}"
+                     alt="logo"
+                     class="img-responsive logo-img">
+            </div>
+
+            <!-- Website Title -->
+            <div class="col-sm-6 text-center">
+
+                <div class="brand-title">
+
+                    <h1>
+                        <span class="red-text">Online Job</span>
+                        <span class="blue-text"> Finder</span>
+                    </h1>
+
+                    <p>
+                        Find Your Dream Career With Trusted Employers
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- Social Icons -->
+            <div class="col-sm-3">
+
+                <div class="social-icons">
+
+                    <a href="#">
+                        <i class="fa fa-twitter"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="fa fa-instagram"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="fa fa-linkedin"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar custom-navbar">
+
+    <div class="container">
+
+        <!-- Brand -->
+        <div class="navbar-header">
+
+            <button type="button"
+                    class="navbar-toggle"
+                    data-toggle="collapse"
+                    data-target="#jobNavbar">
+
+                <span class="icon-bar" style="background:white"></span>
+                <span class="icon-bar" style="background:white"></span>
+                <span class="icon-bar" style="background:white"></span>
+
+            </button>
+
+            <a class="navbar-brand" href="#">
+                Job Portal
+            </a>
+
+        </div>
+
+        <!-- Menu -->
+        <div class="collapse navbar-collapse" id="jobNavbar">
+
+            <ul class="nav navbar-nav navbar-right">
+
+                <li>
+                    <a href="{% url 'admin_home' %}">
+                        <i class="fa fa-home"></i> Home
+                    </a>
+                </li>
+
+         <li class="dropdown">
+
+    <a href="#"
+       class="dropdown-toggle recruiter-link"
+       data-toggle="dropdown">
+
+        <i class="fa fa-users"></i> Recruiters
+        <span class="caret"></span>
+
+    </a>
+
+    <ul class="dropdown-menu recruiter-dropdown">
+
+        <li><a href="{% url 'recruiter_pending' %}">Pending</a></li>
+        <li><a href="{% url 'recruiter_accepted' %}">Accepted</a></li>
+        <li><a href="{% url 'recruiter_rejected' %}">Rejected</a></li>
+        <li><a href="{% url 'view_recruiters' %}">All Recruiters</a></li>
+
+    </ul>
+
+</li>
+
+
+                  <li>
+                    <a href="{% url 'view_users' %}">
+                        <i class="fa-solid fa-user"></i>View Users
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{% url 'adminchange_password' %}">
+                        <i class="fa fa-key"></i> Change Password
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="{% url 'view_contacts' %}">
+                        <i class="fa fa-phone"></i>  Messages
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="{% url 'Logout' %}">
+                        <i class="fa fa-sign-out"></i> Logout
+                    </a>
+                </li>
+
+
+
+<li class="user-profile">
+    <a href="#">
+        <i class="fa fa-user-circle user-icon"></i>
+        <span>
+            {{request.user.username}}
+        </span>
+    </a>
+</li>
+
+
+            </ul>
+
+        </div>
+
+    </div>
+</nav>
+</body>
+</html>

@@ -1,0 +1,59 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/user_login.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+{% block body %}
+
+{% include 'admin_navigation.html' %}
+
+<div class="container my-5">
+
+
+    <div class="card shadow-lg border-0 rounded-4 p-5 text-center bg-primary text-white">
+        <h1><i class="fas fa-user-shield"></i> Admin Dashboard</h1>
+        <p class="mb-0">
+            Manage recruiters, applicants, jobs and monitor portal activity.
+        </p>
+    </div>
+    <div class="row mt-5">
+
+    <div class="col-md-3">
+        <div class="card shadow text-center p-4">
+            <i class="fas fa-users fa-3x text-success"></i>
+            <h2>{{ ucount }}</h2>
+            <h5>Total Applicants</h5>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card shadow text-center p-4">
+            <i class="fas fa-building fa-3x text-primary"></i>
+            <h2>{{ rcount }}</h2>
+            <h5>Total Recruiters</h5>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card shadow text-center p-4">
+            <i class="fas fa-briefcase fa-3x text-danger"></i>
+            <h2>{{ jcount }}</h2>
+            <h5>Total Jobs</h5>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card shadow text-center p-4">
+            <i class="fas fa-envelope fa-3x text-warning"></i>
+            <h2>{{ mcount }}</h2>
+            <h5>Contact Messages</h5>
+        </div>
+    </div>
+
+</div>
+
+
+</div>
+
+{% include 'footer.html' %}
+
+{% endblock %}

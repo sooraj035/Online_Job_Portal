@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+
+    <title>Online Job Finder</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <style>
+
+        body{
+            margin:0;
+            padding:0;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background:#f4f7fc;
+        }
+
+        /*  HEADER  */
+
+        .top-header{
+            background:#0F172A;
+            padding:18px 0;
+            border-bottom:4px solid #2563EB;
+            box-shadow:0 3px 10px rgba(0,0,0,0.15);
+        }
+
+        .logo-img{
+            width:120px;
+            height:120px;
+            border-radius:12px;
+            object-fit:cover;
+            border:3px solid white;
+        }
+
+        .brand-title{
+            margin-top:18px;
+        }
+
+        .brand-title h1{
+            font-size:42px;
+            font-weight:700;
+            margin:0;
+            letter-spacing:1px;
+        }
+
+        .red-text{
+            color:white;
+        }
+
+        .blue-text{
+            color:#3B82F6;
+        }
+
+        .brand-title p{
+            color:#d1d5db;
+            margin-top:10px;
+            font-size:16px;
+            letter-spacing:0.5px;
+        }
+
+        /* SOCIAL ICONS  */
+
+        .social-icons{
+            text-align:right;
+            margin-top:35px;
+        }
+
+        .social-icons a{
+            display:inline-flex;
+            justify-content:center;
+            align-items:center;
+            width:42px;
+            height:42px;
+            border-radius:50%;
+            background:white;
+            color:#0F172A;
+            margin-left:10px;
+            text-decoration:none;
+            font-size:18px;
+            transition:0.3s;
+        }
+
+        .social-icons a:hover{
+            background:#2563EB;
+            color:white;
+            transform:translateY(-3px);
+        }
+
+        /*  NAVBAR  */
+
+        .custom-navbar{
+            background:#2563EB;
+            border:none;
+            border-radius:0;
+            margin-bottom:0;
+            box-shadow:0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .navbar-brand{
+            color:white !important;
+            font-size:30px;
+            font-weight:bold;
+            padding-top:15px;
+            font-family:'Trebuchet MS', sans-serif;
+        }
+
+        .navbar-nav{
+            float:right;
+        }
+
+        .navbar-nav li a{
+            color:white !important;
+            font-size:16px;
+            font-weight:500;
+            padding:18px 16px;
+            transition:0.3s;
+        }
+
+        .navbar-nav li a i{
+            margin-right:6px;
+        }
+
+        .navbar-nav li a:hover{
+            background:white !important;
+            color:#2563EB !important;
+            border-radius:6px;
+        }
+
+        /*  RESPONSIVE  */
+
+        @media(max-width:768px){
+
+            .logo-section{
+                text-align:center;
+            }
+
+            .brand-title{
+                text-align:center;
+                margin-top:15px;
+            }
+
+            .brand-title h1{
+                font-size:30px;
+            }
+
+            .social-icons{
+                text-align:center;
+                margin-top:20px;
+            }
+
+            .navbar-nav{
+                float:none;
+                text-align:center;
+            }
+
+            .navbar-nav li a{
+                padding:12px;
+            }
+        }
+        .user-profile a{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    color:white !important;
+    font-weight:600;
+    font-size:15px;
+    padding:12px 18px !important;
+    border-radius:30px;
+    transition:0.3s ease;
+}
+
+.user-profile a:hover{
+    background:rgba(255,255,255,0.15);
+}
+
+.user-icon{
+    font-size:22px;
+    color:#FFD700;
+}
+
+    </style>
+
+</head>
+
+<body>
+
+
+
+<div class="container-fluid top-header">
+
+    <div class="container">
+
+        <div class="row">
+
+            <!-- Logo -->
+            <div class="col-sm-3 logo-section">
+                <img src="{% static 'images/job1.jpg' %}"
+                     alt="logo"
+                     class="img-responsive logo-img">
+            </div>
+
+            <!-- Website Title -->
+            <div class="col-sm-6 text-center">
+
+                <div class="brand-title">
+
+                    <h1>
+                        <span class="red-text">Online Job</span>
+                        <span class="blue-text"> Finder</span>
+                    </h1>
+
+                    <p>
+                        Find Your Dream Career With Trusted Employers
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- Social Icons -->
+            <div class="col-sm-3">
+
+                <div class="social-icons">
+
+                    <a href="#">
+                        <i class="fa fa-twitter"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="fa fa-instagram"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="fa fa-linkedin"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar custom-navbar">
+
+    <div class="container">
+
+        <!-- Brand -->
+        <div class="navbar-header">
+
+            <button type="button"
+                    class="navbar-toggle"
+                    data-toggle="collapse"
+                    data-target="#jobNavbar">
+
+                <span class="icon-bar" style="background:white"></span>
+                <span class="icon-bar" style="background:white"></span>
+                <span class="icon-bar" style="background:white"></span>
+
+            </button>
+
+            <a class="navbar-brand" href="#">
+                Job Portal
+            </a>
+
+        </div>
+
+        <!-- Menu -->
+        <div class="collapse navbar-collapse" id="jobNavbar">
+
+            <ul class="nav navbar-nav navbar-right">
+
+                <li>
+                    <a href="{% url 'recruiter_home' %}">
+                        <i class="fa fa-home"></i> Home
+                    </a>
+                </li>
+                 <li>
+                    <a href="{% url 'addjob' %}">
+                        <i class="fa fa-plus-circle"></i>Post Jobs
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="{% url 'job_list' %}">
+                        <i class="fa fa-briefcase"></i>Job list
+                    </a>
+                </li>
+                  <li>
+                    <a href="{% url 'candidates' %}">
+                        <i class="fa fa-briefcase"></i>Candidates Applied
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="{% url 'recruiterchange_password' %}">
+                        <i class="fa fa-key"></i> Change Password
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{% url 'Logout' %}">
+                        <i class="fa fa-sign-out"></i> Logout
+                    </a>
+                </li>
+
+
+<li class="user-profile">
+    <a href="#">
+        <i class="fa fa-user-circle user-icon"></i>
+        <span>
+            {{request.user.first_name}} {{request.user.last_name}}
+        </span>
+    </a>
+</li>
+            </ul>
+
+        </div>
+
+    </div>
+</nav>
+</body>
+</html>

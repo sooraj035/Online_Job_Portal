@@ -1,0 +1,199 @@
+
+        body{
+            margin:0;
+            padding:0;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background:#f4f7fc;
+        }
+
+        /*  HEADER  */
+
+        .top-header{
+            background:#0F172A;
+            padding:18px 0;
+            border-bottom:4px solid #2563EB;
+            box-shadow:0 3px 10px rgba(0,0,0,0.15);
+        }
+
+        .logo-img{
+            width:120px;
+            height:120px;
+            border-radius:12px;
+            object-fit:cover;
+            border:3px solid white;
+        }
+
+        .brand-title{
+            margin-top:18px;
+        }
+
+        .brand-title h1{
+            font-size:42px;
+            font-weight:700;
+            margin:0;
+            letter-spacing:1px;
+        }
+
+        .red-text{
+            color:white;
+        }
+
+        .blue-text{
+            color:#3B82F6;
+        }
+
+        .brand-title p{
+            color:#d1d5db;
+            margin-top:10px;
+            font-size:16px;
+            letter-spacing:0.5px;
+        }
+
+        /* SOCIAL ICONS  */
+
+        .social-icons{
+            text-align:right;
+            margin-top:35px;
+        }
+
+        .social-icons a{
+            display:inline-flex;
+            justify-content:center;
+            align-items:center;
+            width:42px;
+            height:42px;
+            border-radius:50%;
+            background:white;
+            color:#0F172A;
+            margin-left:10px;
+            text-decoration:none;
+            font-size:18px;
+            transition:0.3s;
+        }
+
+        .social-icons a:hover{
+            background:#2563EB;
+            color:white;
+            transform:translateY(-3px);
+        }
+
+        /*  NAVBAR  */
+
+        .custom-navbar{
+            background:#2563EB;
+            border:none;
+            border-radius:0;
+            margin-bottom:0;
+            box-shadow:0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .navbar-brand{
+            color:white !important;
+            font-size:30px;
+            font-weight:bold;
+            padding-top:15px;
+            font-family:'Trebuchet MS', sans-serif;
+        }
+
+        .navbar-nav{
+            float:right;
+        }
+
+        .navbar-nav li a{
+            color:white !important;
+            font-size:16px;
+            font-weight:500;
+            padding:18px 16px;
+            transition:0.3s;
+        }
+
+        .navbar-nav li a i{
+            margin-right:6px;
+        }
+
+        .navbar-nav li a:hover{
+            background:white !important;
+            color:#2563EB !important;
+            border-radius:6px;
+        }
+
+        /*  RESPONSIVE  */
+
+        @media(max-width:768px){
+
+            .logo-section{
+                text-align:center;
+            }
+
+            .brand-title{
+                text-align:center;
+                margin-top:15px;
+            }
+
+            .brand-title h1{
+                font-size:30px;
+            }
+
+            .social-icons{
+                text-align:center;
+                margin-top:20px;
+            }
+
+            .navbar-nav{
+                float:none;
+                text-align:center;
+            }
+
+            .navbar-nav li a{
+                padding:12px;
+            }
+
+
+            .dt-buttons{
+    margin-bottom:15px;
+}
+}
+.recruiter-dropdown{
+    background-color:#2563EB !important;
+    border:none !important;
+    padding:0 !important;
+}
+
+.recruiter-dropdown > li{
+    background-color:#2563EB !important;
+}
+
+.recruiter-dropdown > li > a{
+    background-color:#2563EB !important;
+    color:white !important;
+    padding:12px 20px !important;
+    display:block !important;
+}
+
+.recruiter-dropdown > li > a:hover,
+.recruiter-dropdown > li > a:focus{
+    background-color:#071739 !important;
+    color:white !important;
+}
+     .user-profile a{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    color:white !important;
+    font-weight:600;
+    font-size:15px;
+    padding:12px 18px !important;
+    border-radius:30px;
+    transition:0.3s ease;
+}
+
+.user-profile a:hover{
+    background:rgba(255,255,255,0.15);
+}
+
+.user-icon{
+    font-size:22px;
+    color:#FFD700;
+}
+
+

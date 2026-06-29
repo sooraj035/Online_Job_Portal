@@ -1,0 +1,252 @@
+
+
+    body{
+    background:#f8fafc;
+    min-height:100vh;
+    font-family:'Poppins',sans-serif;
+    }
+
+    .login-container{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        min-height:85vh;
+        padding:30px;
+    }
+
+    .login-card{
+        width:100%;
+        max-width:470px;
+        background:white;
+        padding:45px;
+        border-radius:24px;
+        box-shadow:0 10px 35px rgba(0,0,0,0.12);
+    }
+
+    .login-icon{
+        text-align:center;
+        margin-bottom:20px;
+    }
+
+    .login-icon i{
+        font-size:70px;
+        color:#16a34a;
+        background:#dcfce7;
+        padding:18px;
+        border-radius:50%;
+    }
+
+    .login-heading{
+        text-align:center;
+        margin-bottom:35px;
+    }
+
+    .login-heading h2{
+        font-size:35px;
+        font-weight:700;
+        color:#0f172a;
+        margin-bottom:8px;
+    }
+
+    .login-heading p{
+        color:#64748b;
+        font-size:15px;
+    }
+
+    .form-label{
+        font-size:15px;
+        font-weight:600;
+        color:#1e293b;
+        margin-bottom:8px;
+    }
+
+    .form-control{
+        height:55px;
+        border-radius:14px;
+        border:1px solid #cbd5e1;
+        padding-left:18px;
+        font-size:15px;
+        margin-bottom:22px;
+        background:#f8fafc;
+    }
+
+    .form-control:focus{
+        border-color:#16a34a;
+        box-shadow:0 0 10px rgba(22,163,74,0.25);
+    }
+
+    .login-btn{
+        width:100%;
+        height:55px;
+        border:none;
+        border-radius:14px;
+        background:linear-gradient(to right,#16a34a,#15803d);
+        color:white;
+        font-size:18px;
+        font-weight:600;
+        transition:0.3s;
+        margin-top:10px;
+    }
+
+    .login-btn:hover{
+        transform:translateY(-3px);
+        box-shadow:0 8px 18px rgba(22,163,74,0.35);
+    }
+
+    .bottom-text{
+        text-align:center;
+        margin-top:20px;
+        color:#64748b;
+        font-size:14px;
+    }
+    .signup-section{
+    text-align:center;
+    margin-top:22px;
+}
+
+.signup-section p{
+    color:#64748b;
+    font-size:14px;
+    margin-bottom:10px;
+}
+
+.signup-btn{
+    display:inline-block;
+    width:100%;
+    text-align:center;
+    padding:14px;
+    border-radius:14px;
+    border:2px solid #16a34a;
+    color:#16a34a;
+    font-size:16px;
+    font-weight:600;
+    text-decoration:none;
+    transition:0.3s;
+    background:white;
+}
+
+.signup-btn:hover{
+    background:#16a34a;
+    color:white;
+    text-decoration:none;
+    box-shadow:0 8px 18px rgba(22,163,74,0.25);
+}
+
+
+
+    .edit-job-section{
+        padding:60px 0;
+        background:#F1F5F9;
+        min-height:100vh;
+    }
+
+    .edit-job-card{
+        background:#fff;
+        border-radius:18px;
+        padding:40px;
+        box-shadow:0 8px 25px rgba(0,0,0,0.08);
+    }
+
+    .edit-job-header{
+        text-align:center;
+        margin-bottom:35px;
+    }
+
+    .edit-job-header i{
+        font-size:60px;
+        color:#2563EB;
+        margin-bottom:15px;
+    }
+
+    .edit-job-header h2{
+        font-weight:700;
+        color:#0F172A;
+        margin-bottom:8px;
+    }
+
+    .edit-job-header p{
+        color:#64748B;
+        font-size:15px;
+    }
+
+    .form-group label{
+        font-weight:600;
+        color:#1E293B;
+        margin-bottom:8px;
+    }
+
+    .form-control{
+        height:50px;
+        border-radius:10px;
+        border:1px solid #CBD5E1;
+        box-shadow:none;
+    }
+
+    textarea.form-control{
+        height:130px;
+        resize:none;
+        padding-top:12px;
+    }
+
+    .form-control:focus{
+        border-color:#2563EB;
+        box-shadow:0 0 0 0.1rem rgba(37,99,235,0.20);
+    }
+
+    .logo-box{
+        background:#F8FAFC;
+        border:1px dashed #CBD5E1;
+        border-radius:12px;
+        padding:15px;
+        text-align:center;
+    }
+
+    .logo-box img{
+        border-radius:10px;
+        object-fit:cover;
+        margin-bottom:10px;
+    }
+
+    .change-logo{
+        display:inline-block;
+        margin-top:8px;
+        color:#2563EB;
+        font-weight:600;
+        text-decoration:none;
+    }
+
+    .change-logo:hover{
+        text-decoration:none;
+        color:#1D4ED8;
+    }
+
+    .update-btn{
+        width:100%;
+        height:52px;
+        border:none;
+        border-radius:12px;
+        background:#2563EB;
+        color:#fff;
+        font-size:17px;
+        font-weight:600;
+        margin-top:20px;
+        transition:0.3s;
+    }
+
+    .update-btn:hover{
+        background:#1D4ED8;
+    }
+
+    .date-text{
+        color:#EF4444;
+        font-size:13px;
+        margin-left:5px;
+    }
+
+
+table tbody tr:hover{
+    transform:scale(1.01);
+    transition:0.3s;
+    background:#EFF6FF !important;
+}
+

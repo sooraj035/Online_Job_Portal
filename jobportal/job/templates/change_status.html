@@ -1,0 +1,62 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/user_login.css' %}">
+
+{% block body %}
+
+{% include 'admin_navigation.html' %}
+
+<h1 class="text-center" style="color:#071739; font-weight:bold; margin-top:30px; margin-bottom:25px;">
+    <i class="fa fa-users" style="color:#2563EB;"></i> Status Changer
+</h1>
+
+
+
+
+<div class="container login-container">
+
+    <div class="login-card">
+
+        <div class="login-icon"><i class="fa fa-user-circle"></i>
+        </div>
+
+        <div class="admin-heading">
+            <h2>Change Status</h2>
+
+        </div>
+
+        <form method="POST">
+            {% csrf_token %}
+
+            <label class="form-label">Recruiter Name</label>
+            <input type="text" class="form-control" name="username" value="{{recruiter.user.first_name}} {{recruiter.user.last_name}}">
+
+            <label class="form-label">Status</label>
+            <select class="form-control" name="status">
+                <option selected>Change Status</option>
+                <option value="accept">Accept</option>
+                <option value="reject">Reject</option>
+            </select>
+            <input type="submit" class="login-btn" value="Change Status">
+
+        </form>
+        {% if error == "no" %}
+<script>
+    alert("Status Changed Successful");
+    window.location=("{% url 'view_recruiters' %}");
+</script>
+{% endif %}
+
+{% if error == "yes" %}
+<script>
+    alert("Status Change Failed");
+</script>
+{% endif %}
+
+    </div>
+
+</div>
+
+
+
+{% endblock %}

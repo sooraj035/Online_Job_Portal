@@ -1,0 +1,224 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+
+{% block body %}
+
+{% include 'navigation.html' %}
+
+<!-- HERO SECTION -->
+
+<div class="container-fluid hero-section mt-3">
+
+    <img src="{% static 'images/vecteezy_3d-male-character-got-an-idea-while-working-on-a-laptop_24785803.png' %}"
+         style="width:100%; max-height:550px; object-fit:contain;"
+         class="img-responsive">
+
+</div>
+
+<!-- Candidates section -->
+
+<div class="container placed-section">
+
+    <h1 class="section-title text-center">
+        Recently Recruited Candidates
+    </h1>
+
+    <p class="section-subtitle text-center">
+        Thousands of talented candidates have achieved their dream careers through our platform.
+    </p>
+
+    <div class="row mt-5">
+
+        <div class="col-md-3 col-sm-6 mb-4">
+
+            <div class="company-card">
+
+                <img src="{% static 'images/boy avatar.jpg' %}" class="img-fluid">
+
+                <div class="content">
+                    <h5>Arjun Nair</h5>
+                    <p>Placed at Cognizant</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-3 col-sm-6 mb-4">
+
+            <div class="company-card">
+
+                <img src="{% static 'images/girl avatar.jpg' %}" class="img-fluid">
+
+                <div class="content">
+                    <h5>Meera Joseph</h5>
+                    <p>Placed at TCS</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-3 col-sm-6 mb-4">
+
+            <div class="company-card">
+
+                <img src="{% static 'images/boy avatar.jpg' %}" class="img-fluid">
+
+                <div class="content">
+                    <h5>Rahul Das</h5>
+                    <p>Placed at Google</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-3 col-sm-6 mb-4">
+
+            <div class="company-card">
+
+                <img src="{% static 'images/girl avatar.jpg' %}" class="img-fluid">
+
+                <div class="content">
+                    <h5>Anjali Menon</h5>
+                    <p>Placed at IBM</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-3 col-sm-6 mb-4">
+
+            <div class="company-card">
+
+                <img src="{% static 'images/boy avatar.jpg' %}" class="img-fluid">
+
+                <div class="content">
+                    <h5>Adithya Kumar</h5>
+                    <p>Placed at Amazon</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-3 col-sm-6 mb-4">
+
+            <div class="company-card">
+
+                <img src="{% static 'images/girl avatar.jpg' %}" class="img-fluid">
+
+                <div class="content">
+                    <h5>Neha Roy</h5>
+                    <p>Placed at Infosys</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-3 col-sm-6 mb-4">
+
+            <div class="company-card">
+
+                <img src="{% static 'images/boy avatar.jpg' %}" class="img-fluid">
+
+                <div class="content">
+                    <h5>Vishnu Prasad</h5>
+                    <p>Placed at UST Global</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-3 col-sm-6 mb-4">
+
+            <div class="company-card">
+
+                <img src="{% static 'images/girl avatar.jpg' %}" class="img-fluid">
+
+                <div class="content">
+                    <h5>Sneha Pillai</h5>
+                    <p>Placed at Tech Mahindra</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!--  RECRUITERS SECTION -->
+
+<div class="container recruiter-section">
+
+    <h1 class="section-title text-center">
+        OUR TOP RECRUITERS
+    </h1>
+
+    <p class="section-subtitle text-center">
+        Leading companies trust our platform to hire talented professionals.
+    </p>
+
+    <div class="row mt-5">
+
+        <div class="col-md-3 col-sm-6 mb-4">
+
+            <div class="recruiter-box text-center">
+
+                <img src="{% static 'images/googlelogo.jpg' %}" class="recruiter-logo">
+
+                <h5>Google</h5>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-3 col-sm-6 mb-4">
+
+            <div class="recruiter-box text-center">
+
+                <img src="{% static 'images/amazonlogo.jpg' %}" class="recruiter-logo">
+
+                <h5>Amazon</h5>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-3 col-sm-6 mb-4">
+
+            <div class="recruiter-box text-center">
+
+                <img src="{% static 'images/tcslogo.jpg' %}" class="recruiter-logo">
+
+                <h5>TCS</h5>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-3 col-sm-6 mb-4">
+
+            <div class="recruiter-box text-center">
+
+                <img src="{% static 'images/infosyslogo.jpg' %}" class="recruiter-logo">
+
+                <h5>Infosys</h5>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% include 'footer.html' %}
+
+{% endblock %}

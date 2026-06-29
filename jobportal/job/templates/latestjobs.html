@@ -1,0 +1,89 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/user_login.css' %}">
+
+{% block body %}
+
+{% include 'navigation.html' %}
+
+<h1 class="text-center" style="color:#071739; font-weight:bold; margin-top:30px; margin-bottom:25px;">
+    <i class="fa fa-users" style="color:#2563EB;"></i> Latest Job Lists
+</h1>
+
+<div class="container">
+
+    <p class="text-center text-muted">
+    Total Jobs Available : <strong>{{data|length}}</strong>
+</p>
+<table class="table table-hover table-bordered" id="example"
+       style="background:white;
+              border-radius:15px;
+              overflow:hidden;
+              box-shadow:0 6px 20px rgba(0,0,0,0.1);">
+
+    <thead>
+
+    <tr style="background:#2563EB; color:white; font-size:16px;">
+
+        <th class="text-center">S.no</th>
+        <th class="text-center">Company Name</th>
+        <th class="text-center">Job title</th>
+        <th class="text-center">Location</th>
+        <th class="text-center">Apply from</th>
+        <th class="text-center">Last date to submit application</th>
+        <th class="text-center">Action</th>
+
+
+    </tr>
+
+    </thead>
+
+    <tbody>
+
+    {% for i in data %}
+
+    <tr style="background:#F8FAFC;">
+
+        <td>{{forloop.counter}}</td>
+
+        <td>
+            <strong>
+                {{i.recruiter.company}}
+            </strong>
+        </td>
+
+        <td>{{i.title}}</td>
+        <td>{{i.location}}</td>
+        <td>{{i.start_date|date:"d M Y"}}</td>
+        <td>{{i.end_date|date:"d M Y"}}</td>
+
+
+
+<td>
+
+
+    <a href="{% url 'user_login' %}"
+       class="btn btn-success btn-sm mr-2 shadow"
+       style="border-radius:8px; padding:8px 16px; margin-right:10px;">
+        Login to apply
+    </a>
+
+
+
+</td>
+
+    </tr>
+
+    {% endfor %}
+
+    </tbody>
+
+</table>
+</div>
+{% include 'footer.html' %}
+
+
+
+
+
+{% endblock %}

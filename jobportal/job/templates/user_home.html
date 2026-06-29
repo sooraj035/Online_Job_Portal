@@ -1,0 +1,133 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/userhome.css' %}">
+{% block body %}
+
+{% include 'user_navigation.html' %}
+
+
+<section class="profile-section">
+
+    <div class="container">
+
+        <div class="profile-box">
+
+            <div class="profile-heading text-center">
+                <h2>Applicant Profile</h2>
+
+            </div>
+
+            <div class="row align-items-center">
+
+
+                <div class="col-md-8">
+
+                    <form method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+
+                        <div class="form-row">
+
+                            <div class="form-group col-md-6">
+                                <label>First Name</label>
+                                <input type="text" class="form-control" name="first_name" value="{{applicant.user.first_name}}" required>
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <label>Last Name</label>
+                                <input type="text" class="form-control" name="last_name" value="{{applicant.user.last_name}}" required>
+                            </div>
+
+                        </div>
+
+                        <div class="form-row">
+
+                            <div class="form-group col-md-6">
+                                <label>Contact Number</label>
+                                <input type="text" class="form-control" name="contact" value="{{applicant.phone}}" required>
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <label>Email Address</label>
+                                <input type="email" class="form-control" name="email" value="{{applicant.user.email}}" readonly required>
+                            </div>
+
+                        </div>
+
+<div class="form-group col-md-12">
+
+    <label>Gender</label>
+
+    <div class="gender-box">
+
+        <div>
+            <input type="radio" id="male" name="gender" value="Male"
+                   {% if applicant.gender|lower == "male" %}checked{% endif %}>
+
+            <label for="male">Male</label>
+
+        </div>
+
+        <div>
+            <input type="radio" id="female" name="gender" value="Female"
+                   {% if applicant.gender|lower == "female" %}checked{% endif %}>
+
+            <label for="female">Female</label>
+        </div>
+
+    </div>
+
+</div>
+
+                        <div class="form-row">
+
+                            <div class="form-group col-md-12">
+                                <label>Upload Image</label>
+                                <input type="file" class="form-control" name="image" accept="image/*">
+                            </div>
+
+                        </div>
+
+                        <input type="submit" class="signup-btn" value="Save Details">
+
+                    </form>
+
+                </div>
+
+
+                <div class="col-md-4">
+
+
+                      <div class="profile-image">
+                          {%if applicant.image %}
+                          <img src="{{ applicant.image.url }}" width="220px" height="220px">
+                          {%endif%}
+                      </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% include 'footer.html' %}
+
+{% if error == "no" %}
+<script>
+    alert("Profile updated Successful");
+    window.location.href="{% url 'user_home' %}";
+</script>
+{% endif %}
+
+{% if error == "yes" %}
+<script>
+    alert("Profile updation Failed");
+</script>
+{% endif %}
+
+
+
+
+{% endblock %}
